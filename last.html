@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Bang-Bang</title>
+</head>
+
+<script>
+document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+</script>
+
+<link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.12/video.js"></script>
+
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<style type="text/css">
+  .vjs-default-skin { color: #f7e8e8; }
+  .vjs-default-skin .vjs-play-progress,
+  .vjs-default-skin .vjs-volume-level { background-color: #a31212 }
+  .vjs-default-skin .vjs-control-bar,
+  .vjs-default-skin .vjs-big-play-button { background: rgba(39,44,245,0.9) }
+  .vjs-default-skin .vjs-slider { background: rgba(32,40,235,0.2333333333333333) }
+  .vjs-default-skin .vjs-control-bar { font-size: 80% }
+</style>
+
+<body oncontextmenu="return false;">
+<a href='http://www.google.com' target='popup' onclick=window.open('http://www.google.com','popup',' height: auto;
+      width: auto;
+      max-height: 550px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;'); return false;>Open Link in Popup
+
+<video id="demo" controls class="video-js vjs-default-skin" height=100% width=100% 
+poster="https://lh3.googleusercontent.com/lFPmznNry0sGlfNosbeHoQyqaumuTr9PF6_VHJmnACGiMafen2Q7OIMMZDSbF_r7VevCla4SoaHdBPFwB-Obu0S2DcO3FqI6Wb5VBwd2We2N2AziFrqOX-SMz1QMnUXB5te6DVVRJA=w1920-h1080">
+
+   <source  src="https://firebasestorage.googleapis.com/v0/b/cammando-and-dabang-3.appspot.com/o/Commando.3.2019.Hindi.1080p.mp4?alt=media&token=76ba44ac-60da-4ed4-9008-d736cdbfedbc" type="video/mp4">
+   
+   
+   <source  src="https://firebasestorage.googleapis.com/v0/b/cammando-and-dabang-3.appspot.com/o/Commando.3.2019.Hindi.1080p.mp4?alt=media&token=76ba44ac-60da-4ed4-9008-d736cdbfedbc" type="video/webm">
+</video>
+</a>
+<style>
+.special-blue{
+   background-color: #4949d8 !important;
+}
+</style>
+
+<script>
+var player = videojs('demo');
+
+player.markers({
+   markerStyle: {
+      'width':'9px',
+      'border-radius': '40%',
+      'background-color': 'orange'
+   },
+   markerTip:{
+      display: true,
+      text: function(marker) {
+         return "I am a marker tip: "+ marker.text;
+      }
+   },
+   breakOverlay:{
+      display: true,
+      displayTime: 4,
+      style:{
+         'width':'100%',
+         'height': '30%',
+         'background-color': 'rgba(10,10,10,0.6)',
+         'color': 'white',
+         'font-size': '16px'
+      },
+      text: function(marker) {
+         return "This is a break overlay: " + marker.overlayText;
+      },
+   },
+   markers: [
+      {time: 9.5, text: "this", overlayText: "1", class: "special-blue"},
+      {time: 16,  text: "is", overlayText: "2"},
+      {time: 23.6,text: "so", overlayText: "3"},
+      {time: 28,  text: "cool", overlayText: "4"}
+   ]
+});
+
+</script>
+
+</body>
+</html>
